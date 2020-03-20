@@ -1,0 +1,61 @@
+body{
+  padding: 0px;
+  margin: 0px;
+}
+svg{
+  position: absolute;
+}
+h4{
+  padding-top: 20px;
+  padding-left: 120px;
+}
+.outerLine{
+  width: 500px;
+  border: 5px solid gray;
+}
+.stats{
+
+}
+.kills{
+  position: fixed;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+#killContent{
+  border-radius: 10px;
+  background: #73AD21;
+  width: 50px;
+  height: 20PX;
+}
+.win{
+  position: fixed;
+  padding-top: 20px;
+  padding-left: 110px;
+}
+#winContent{
+  border-radius: 10px;
+  background: #73AD21;
+  width: 50px;
+  height: 20PX;
+}
+.deaths{
+  position: fixed;
+  padding-top: 20px;
+  padding-left: 200px;
+}
+#deathContent{
+  border-radius: 10px;
+  background: #73AD21;
+  width: 50px;
+  height: 20PX;
+}
+.avgLife{
+  padding-top: 20px;
+  padding-left: 280px;
+}
+#avgLifeContent{
+  border-radius: 10px;
+  background: #73AD21;
+  width: 50px;
+  height: 20PX;
+}
