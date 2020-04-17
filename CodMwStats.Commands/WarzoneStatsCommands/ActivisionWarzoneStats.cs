@@ -1,26 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using CodMwStats.ApiWrapper;
 using CodMwStats.ApiWrapper.Models;
 using CodMwStats.Commands.ImageGenerationFiles;
 using CoreHtmlToImage;
-using Discord;
 using Discord.Commands;
 using Newtonsoft.Json;
 
 namespace CodMwStats.Commands.WarzoneStatsCommands
 {
-    public class PS4WarzoneStats : ModuleBase<SocketCommandContext>
+    public class ActivisionWarzoneStats : ModuleBase<SocketCommandContext>
     {
-        [Command("WarzoneStats-psn")]
-        [Alias("WZStatspsn")]
-        public async Task StatsPSNWarzone([Remainder] string userName)
+        [Command("WarzoneStats-activision")]
+        [Alias("WZStatsav")]
+        public async Task StatsActivisionWarzone([Remainder] string userName)
         {
+            if (userName.Contains("#"))
+            {
+                userName = userName.Replace("#", "%23");
+            }
             var jsonAsString =
-                await ApiProcessor.GetUser($"https://api.tracker.gg/api/v2/warzone/standard/profile/psn/{userName}");
+                await ApiProcessor.GetUser(
+                    $"https://api.tracker.gg/api/v2/warzone/standard/profile/atvi/{userName}");
             var apiData = JsonConvert.DeserializeObject<ModerWarfareApiOutput>(jsonAsString);
 
             var name = apiData.Data.PlatformInfo.PlatformUserHandle;

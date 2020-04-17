@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CodMwStats.Commands.ImageGenerationFiles
 {
-    public class HtmlStrings
+    public class StatsGenerationFiles
     {
         public string MultiplayerHtml(
             string username,

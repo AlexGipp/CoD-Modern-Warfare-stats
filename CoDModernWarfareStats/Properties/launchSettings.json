@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CodMwStats.Core": {
+      "commandName": "Project",
+      "commandLineArgs": "0"
+    }
+  }
+}

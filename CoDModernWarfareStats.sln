@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodMwStats.AccountLogic", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodMwStats.ApiWrapper", "CodMwStats.ApiWrapper\CodMwStats.ApiWrapper.csproj", "{8B23EC3A-1583-4ADC-BC8F-7CED025ABE3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodMwStats.Commands", "CodMwStats.Commands\CodMwStats.Commands.csproj", "{E3B52974-CC86-4941-8DD3-6411D074FBAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodMwStats.Commands", "CodMwStats.Commands\CodMwStats.Commands.csproj", "{E3B52974-CC86-4941-8DD3-6411D074FBAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

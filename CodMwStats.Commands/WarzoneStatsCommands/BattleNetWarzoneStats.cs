@@ -61,7 +61,7 @@ namespace CodMwStats.Commands.WarzoneStatsCommands
 
 
             var converter = new HtmlConverter();
-            var generationStrings = new HtmlStrings();
+            var generationStrings = new StatsGenerationFiles();
             string css = generationStrings.WarzoneCss(levelper);
             string html = String.Format(generationStrings.WarzoneHtml(name, pfp, playTime, matches, levelImg.ToString(),
                 level, levelper, kd, kills, WinPer, wins, deaths, avgLife, score, top5, top10, downs, scoreGame,

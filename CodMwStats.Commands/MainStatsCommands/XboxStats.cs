@@ -43,7 +43,7 @@ namespace CodMwStats.Commands.MainStatsCommands
             var headshotaccuracy = apiData.Data.Segment[0].Stats.HeadshotPercentage.DisplayValue;
 
             var converter = new HtmlConverter();
-            var generationStrings = new HtmlStrings();
+            var generationStrings = new StatsGenerationFiles();
             string css = generationStrings.MultiplayerCss(levelper);
             string html = String.Format(generationStrings.MultiplayerHtml(name, pfp, playTime, matches, levelImg.ToString(), level, levelper, kd, kills, WinPer, wins, bestKillsreak, losses, deaths, avgLife, assists, score, accuracy, headshotaccuracy));
             int width = 520;

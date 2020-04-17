@@ -9,17 +9,20 @@ using CodMwStats.Commands.ImageGenerationFiles;
 using CoreHtmlToImage;
 using Discord.Commands;
 using Newtonsoft.Json;
-using ImageFormat = Discord.ImageFormat;
 
 namespace CodMwStats.Commands.MainStatsCommands
 {
-    public class PS4Stats : ModuleBase<SocketCommandContext>
+    public class ActivisionStats : ModuleBase<SocketCommandContext>
     {
-        [Command("Stats-psn")]
-        [Alias("Statspsn")]
-        public async Task StatsPSN([Remainder] string userName)
+        [Command("Stats-activision")]
+        [Alias("Statsav")]
+        public async Task Statsatvi([Remainder] string userName)
         {
-            var jsonAsString = await ApiProcessor.GetUser($"https://api.tracker.gg/api/v2/modern-warfare/standard/profile/psn/{userName}");
+            if (userName.Contains("#"))
+            {
+                userName = userName.Replace("#", "%23");
+            }
+            var jsonAsString = await ApiProcessor.GetUser($"https://api.tracker.gg/api/v2/modern-warfare/standard/profile/atvi/{userName}");
             var apiData = JsonConvert.DeserializeObject<ModerWarfareApiOutput>(jsonAsString);
 
             var name = apiData.Data.PlatformInfo.PlatformUserHandle;
@@ -48,8 +51,8 @@ namespace CodMwStats.Commands.MainStatsCommands
             string html = String.Format(generationStrings.MultiplayerHtml(name, pfp, playTime, matches, levelImg.ToString(), level, levelper, kd, kills, WinPer, wins, bestKillsreak, losses, deaths, avgLife, assists, score, accuracy, headshotaccuracy));
             int width = 520;
             var bytes = converter.FromHtmlString(css + html, width, CoreHtmlToImage.ImageFormat.Png);
-            File.WriteAllBytes("Resources/PSNStats.png", bytes);
-            await Context.Channel.SendFileAsync(new MemoryStream(bytes), "Resources/PSNStats.png");
+            File.WriteAllBytes("Resources/ATVIStats.png", bytes);
+            await Context.Channel.SendFileAsync(new MemoryStream(bytes), "Resources/ATVIStats.png");
         }
     }
 }

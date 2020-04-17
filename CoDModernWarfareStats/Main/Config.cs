@@ -3,7 +3,7 @@ using System.IO;
 
 namespace CodMwStats.Core.Main
 {
-    class Config
+    public class Config
     {
         private const string configFolder = "Resources";
         private const string configFile = "config.json";

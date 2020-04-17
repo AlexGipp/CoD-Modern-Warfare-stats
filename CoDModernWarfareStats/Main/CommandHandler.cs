@@ -3,7 +3,10 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using System;
+using System.IO;
 using System.Threading.Tasks;
+using CodMwStats.Commands.ImageGenerationFiles;
+using CoreHtmlToImage;
 
 namespace CodMwStats.Core.Main
 {
