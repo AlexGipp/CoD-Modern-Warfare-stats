@@ -54,8 +54,8 @@ namespace CodMwStats.Commands.WarzoneStatsCommands
                 contracts));
             int width = 520;
             var bytes = converter.FromHtmlString(css + html, width, CoreHtmlToImage.ImageFormat.Png);
-            File.WriteAllBytes("Resources/BNWarzoneStats.png", bytes);
-            await Context.Channel.SendFileAsync(new MemoryStream(bytes), "Resources/BNWarzoneStats.png");
+            File.WriteAllBytes("Resources/AVWarzoneStats.png", bytes);
+            await Context.Channel.SendFileAsync(new MemoryStream(bytes), "Resources/AVWarzoneStats.png");
         }
     }
 }

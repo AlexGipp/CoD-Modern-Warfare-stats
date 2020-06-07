@@ -21,6 +21,8 @@ namespace CodMwStats.Core.Main
             System.Threading.Thread.Sleep(5000);
             await _client.SetGameAsync($"Call of Duty Modern Warfare");
             System.Threading.Thread.Sleep(5000);
+            await _client.SetGameAsync($"Looking over {_client.Guilds.Count} Guilds.");
+            System.Threading.Thread.Sleep(5000);
             setPlayStatus();
         }
 

@@ -15,6 +15,7 @@ namespace CodMwStats.ApiWrapper
         {
             ApiClient = new HttpClient();
             ApiClient.DefaultRequestHeaders.Accept.Clear();
+            //ApiClient.Timeout = TimeSpan.FromSeconds(3);
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
     }

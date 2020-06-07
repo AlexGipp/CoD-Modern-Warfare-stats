@@ -9,5 +9,7 @@
         public string Prefix { get; set; }
 
         public string Joined { get; set; }
+
+        public int MemberCount { get; set; }
     }
 }

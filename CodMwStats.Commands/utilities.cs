@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Net;
 using System.Threading.Tasks;
 using CodMwStats.AccountLogic.ServerAccounts;
-using CodMwStats.ApiWrapper;
-using CodMwStats.ApiWrapper.Models;
 using CodMwStats.Commands.ImageGenerationFiles;
 using CoreHtmlToImage;
 using Discord;
 using Discord.Commands;
+using Discord.Rest;
 using Discord.WebSocket;
-using Newtonsoft.Json;
 
 namespace CodMwStats.Commands
 {
@@ -36,29 +33,24 @@ namespace CodMwStats.Commands
         [Command("help")]
         public async Task Help()
         {
-            if (Context.Channel is IDMChannel)
-            {
-                await Context.Channel.SendMessageAsync($"https://i.imgur.com/zcB6CoO.png");
-                return;
-            }
+            var serverAccount = ServerAccounts.GetAccount(Context.Guild);
+            var embed = new EmbedBuilder();
+            embed.WithTitle("Page 1/2");
+            embed.WithDescription($"**Server Prefix:** `{serverAccount.Prefix}`");
+            embed.WithImageUrl("https://i.imgur.com/9ImiHyn.png");
 
-            SocketGuild target = Context.Guild;
-            var serverAccount = ServerAccounts.GetAccount((SocketGuild)target);
-            var prefix = serverAccount.Prefix;
+            RestUserMessage msg = await Context.Channel.SendMessageAsync("", false, embed.Build());
+            Global.MessageToToTrack = msg.Id;
 
+            var one = new Emoji("\U00000031\U000020e3");
+            var two = new Emoji("\U00000032\U000020e3");
+            var delete = new Emoji("\U000023f9");
+            var questionmark = new Emoji("\U00002754");
 
-            if (!File.Exists($"Resources/{Context.Guild.Id}.png"))
-            {
-                var converter = new HtmlConverter();
-                var generationStrings = new HelpGenerationFiles();
-
-                string css = generationStrings.HelpCss();
-                string html = String.Format(generationStrings.HelpHtml(prefix));
-                int width = 520;
-                var bytes = converter.FromHtmlString(css + html, width, CoreHtmlToImage.ImageFormat.Png);
-                File.WriteAllBytes($"Resources/{Context.Guild.Id}.png", bytes);
-            }
-            await Context.Channel.SendFileAsync($"Resources/{Context.Guild.Id}.png");
+            await msg.AddReactionAsync(one);
+            await msg.AddReactionAsync(two);
+            await msg.AddReactionAsync(delete);
+            await msg.AddReactionAsync(questionmark);
         }
 
         [Command("adminHelp")]
@@ -88,7 +80,5 @@ namespace CodMwStats.Commands
             }
             await Context.Channel.SendFileAsync($"Resources/{Context.Guild.Id}Admin.png");
         }
-
-
     }
 }

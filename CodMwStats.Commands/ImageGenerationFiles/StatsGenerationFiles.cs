@@ -56,6 +56,56 @@ namespace CodMwStats.Commands.ImageGenerationFiles
                 $"<div class=\"backgroundimg\"><img src=\"https://i.imgur.com/bGob51H.png\" ></div>\n<div class=\"ProfilePictureBig\"><img src=\"{profilePicture}\" ></div>\n<div class=\"profilePic\"><img src=\"{levelIcon}\" alt=\"\"></div>\n\n<div class=\"Username\">\n    <h1>\n        {username}\n    </h1>\n</div>\n\n<div class=\"playTime\">\n    <h1>\n        {playTime} Play Time\n    </h1>\n</div>\n\n<div class=\"matches\">\n    <h1>\n        {matches} Matches\n    </h1>\n</div>\n\n<div class=\"level\">\n    <h1>\n        {level}\n    </h1>\n</div>\n\n<div class=\"progressbar\">\n\n  <div class=\"progressbarContent\"></div>\n\n</div>\n\n<div class=\"levelProgression\">\n    <h1>\n        {levelProgression}\n    </h1>\n</div>\n\n<div class=\"Wins\">\n    <h1>\n        {wins}\n    </h1>\n</div>\n\n<div class=\"top5\">\n    <h1>\n        {top5}\n    </h1>\n</div>\n\n<div class=\"kdRatio\">\n    <h1>\n        {kd}\n    </h1>\n</div>\n\n<div class=\"kills\">\n    <h1>\n        {kills}\n    </h1>\n</div>\n\n<div class=\"top10\">\n    <h1>\n        {top10}\n    </h1>\n</div>\n\n<div class=\"downs\">\n    <h1>\n        {downs}\n    </h1>\n</div>\n\n<div class=\"score\">\n    <h1>\n        {score}\n    </h1>\n</div>\n\n<div class=\"scoreGame\">\n    <h1>\n        {scoreGame}\n    </h1>\n</div>\n\n<div class=\"contracts\">\n    <h1>\n        {contracts}\n    </h1>\n</div>\n\n<div class=\"avgLife\">\n    <h1>\n        {avarageLife}\n    </h1>\n</div>\n\n<div class=\"deaths\">\n    <h1>\n        {deaths}\n    </h1>\n</div>\n\n<div class=\"winPercentage\">\n    <h1>\n        {wlRatio}\n    </h1>\n</div>\n";
         }
 
+        public string PlunderHtml(
+            string username,
+            string profilePicture,
+            string playTime,
+            string matches,
+            string levelIcon,
+            string level,
+            string levelProgression,
+            string kd,
+            string kills,
+            string wlRatio,
+            string wins,
+            string deaths,
+            string avarageLife,
+            string score,
+            string scoreGame,
+            string scoreMin,
+            string downs,
+            string cash,
+            string contracts)
+        {
+            return
+                $"<div class=\"backgroundimg\"><img src=\"https://i.imgur.com/ULjIYzg.png\" ></div>\n<div class=\"ProfilePictureBig\"><img src=\"{profilePicture}\" ></div>\n<div class=\"profilePic\"><img src=\"{levelIcon}\" alt=\"\"></div>\n\n<div class=\"Username\">\n    <h1>\n        {username}\n    </h1>\n</div>\n\n<div class=\"playTime\">\n    <h1>\n        {playTime} Play Time\n    </h1>\n</div>\n\n<div class=\"matches\">\n    <h1>\n        {matches} Matches\n    </h1>\n</div>\n\n<div class=\"level\">\n    <h1>\n        {level}\n    </h1>\n</div>\n\n<div class=\"progressbar\">\n\n  <div class=\"progressbarContent\"></div>\n\n</div>\n\n<div class=\"levelProgression\">\n    <h1>\n        {levelProgression}\n    </h1>\n</div>\n\n<div class=\"Wins\">\n    <h1>\n        {wins}\n    </h1>\n</div>\n\n<div class=\"top5\">\n    <h1>\n        {scoreGame}\n    </h1>\n</div>\n\n<div class=\"kdRatio\">\n    <h1>\n        {kd}\n    </h1>\n</div>\n\n<div class=\"kills\">\n    <h1>\n        {kills}\n    </h1>\n</div>\n\n<div class=\"top10\">\n    <h1>\n        {scoreMin}\n    </h1>\n</div>\n\n<div class=\"downs\">\n    <h1>\n        {downs}\n    </h1>\n</div>\n\n<div class=\"score\">\n    <h1>\n        {score}\n    </h1>\n</div>\n\n<div class=\"scoreGame\">\n    <h1>\n        {cash}\n    </h1>\n</div>\n\n<div class=\"contracts\">\n    <h1>\n        {contracts}\n    </h1>\n</div>\n\n<div class=\"avgLife\">\n    <h1>\n        {avarageLife}\n    </h1>\n</div>\n\n<div class=\"deaths\">\n    <h1>\n        {deaths}\n    </h1>\n</div>\n\n<div class=\"winPercentage\">\n    <h1>\n        {wlRatio}\n    </h1>\n</div>\n";
+        }
+
+        public string BattleRoyaleHtml(
+            string username,
+            string profilePicture,
+            string playTime,
+            string matches,
+            string levelIcon,
+            string level,
+            string levelProgression,
+            string kd,
+            string kills,
+            string wlRatio,
+            string wins,
+            string deaths,
+            string avarageLife,
+            string score,
+            string top5,
+            string top10,
+            string downs,
+            string top25,
+            string contracts)
+        {
+            return
+                $"<div class=\"backgroundimg\"><img src=\"https://i.imgur.com/UMVybv6.png\" ></div>\n<div class=\"ProfilePictureBig\"><img src=\"{profilePicture}\" ></div>\n<div class=\"profilePic\"><img src=\"{levelIcon}\" alt=\"\"></div>\n\n<div class=\"Username\">\n    <h1>\n        {username}\n    </h1>\n</div>\n\n<div class=\"playTime\">\n    <h1>\n        {playTime} Play Time\n    </h1>\n</div>\n\n<div class=\"matches\">\n    <h1>\n        {matches} Matches\n    </h1>\n</div>\n\n<div class=\"level\">\n    <h1>\n        {level}\n    </h1>\n</div>\n\n<div class=\"progressbar\">\n\n  <div class=\"progressbarContent\"></div>\n\n</div>\n\n<div class=\"levelProgression\">\n    <h1>\n        {levelProgression}\n    </h1>\n</div>\n\n<div class=\"Wins\">\n    <h1>\n        {wins}\n    </h1>\n</div>\n\n<div class=\"top5\">\n    <h1>\n        {top5}\n    </h1>\n</div>\n\n<div class=\"kdRatio\">\n    <h1>\n        {kd}\n    </h1>\n</div>\n\n<div class=\"kills\">\n    <h1>\n        {kills}\n    </h1>\n</div>\n\n<div class=\"top10\">\n    <h1>\n        {top10}\n    </h1>\n</div>\n\n<div class=\"downs\">\n    <h1>\n        {downs}\n    </h1>\n</div>\n\n<div class=\"score\">\n    <h1>\n        {score}\n    </h1>\n</div>\n\n<div class=\"scoreGame\">\n    <h1>\n        {top25}\n    </h1>\n</div>\n\n<div class=\"contracts\">\n    <h1>\n        {contracts}\n    </h1>\n</div>\n\n<div class=\"avgLife\">\n    <h1>\n        {avarageLife}\n    </h1>\n</div>\n\n<div class=\"deaths\">\n    <h1>\n        {deaths}\n    </h1>\n</div>\n\n<div class=\"winPercentage\">\n    <h1>\n        {wlRatio}\n    </h1>\n</div>";
+        }
+
 
         public string MultiplayerCss(string levelProgression)
         {

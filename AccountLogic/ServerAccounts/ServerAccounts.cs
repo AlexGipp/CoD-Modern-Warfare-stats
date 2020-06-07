@@ -35,28 +35,29 @@ namespace CodMwStats.AccountLogic.ServerAccounts
 
         public static ServerAccount GetAccount(SocketGuild guild)
         {
-            return GetOrCreateAccount(guild.Id, guild.Name);
+            return GetOrCreateAccount(guild.Id, guild.Name, guild.MemberCount);
         }
 
-        private static ServerAccount GetOrCreateAccount(ulong id, string username)
+        private static ServerAccount GetOrCreateAccount(ulong id, string username, int memberCount)
         {
             var result = from a in _accounts
                 where a.ID == id
                 select a;
 
             var account = result.FirstOrDefault();
-            if (account == null) account = CreateUserAccount(id, username);
+            if (account == null) account = CreateUserAccount(id, username, memberCount);
             return account;
         }
 
-        private static ServerAccount CreateUserAccount(ulong id, string username)
+        private static ServerAccount CreateUserAccount(ulong id, string username, int memberCount)
         {
             var newAccount = new ServerAccount()
             {
                 ID = id,
                 ServerName = username,
                 Prefix = ">",
-                Joined = DateTimeOffset.UtcNow.ToString("d.MM.yyyy HH:mm:ss")
+                Joined = DateTimeOffset.UtcNow.ToString("d.MM.yyyy HH:mm:ss"),
+                MemberCount = memberCount
             };
 
             _accounts.Add(newAccount);
